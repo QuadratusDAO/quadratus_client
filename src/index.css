@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fcfcfc;
+  font-family: "Special Elite", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* sticky nav */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.no-scroll {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+/* change scroll bar color */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* remove counter on inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* make radio colors black */
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid #000;
+  transition: 0.2s all linear;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: #000;
+}
+
+::placeholder {
+  font-size: 0.8rem;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5 !important;
+}

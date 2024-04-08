@@ -1,0 +1,717 @@
+{
+  "version": "0.1.0",
+  "name": "quadra",
+  "instructions": [
+    {
+      "name": "initializeFeeAccount",
+      "accounts": [
+        {
+          "name": "feeAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createDao",
+      "accounts": [
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "treasuryVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "burnVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "feeAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "string"
+        },
+        {
+          "name": "minYesVotes",
+          "type": "u64"
+        },
+        {
+          "name": "proposalCreationFee",
+          "type": "u64"
+        },
+        {
+          "name": "membershipFee",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "joinDao",
+      "accounts": [
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "membership",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "treasuryVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userTokenMintAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createProposal",
+      "accounts": [
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "proposal",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "treasuryVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "beneficiary",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "beneficiaryOwner",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userTokenMintAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "membership",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "tokenAmount",
+          "type": "u64"
+        },
+        {
+          "name": "endDate",
+          "type": "i64"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "action",
+          "type": "u8"
+        },
+        {
+          "name": "burnOnVote",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "voteOnProposal",
+      "accounts": [
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "proposal",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userProposalVotes",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "treasuryVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "burnVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userTokenMintAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "membership",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "side",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "executeProposal",
+      "accounts": [
+        {
+          "name": "dao",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "proposal",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "treasuryVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "burnVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "beneficiary",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "beneficiaryOwner",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "FeeAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "feeAmount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DAO",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "creator",
+            "type": "publicKey"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "image",
+            "type": "string"
+          },
+          {
+            "name": "treasuryVault",
+            "type": "publicKey"
+          },
+          {
+            "name": "burnVault",
+            "type": "publicKey"
+          },
+          {
+            "name": "totalProposals",
+            "type": "u64"
+          },
+          {
+            "name": "minYesVotes",
+            "type": "u64"
+          },
+          {
+            "name": "proposalCreationFee",
+            "type": "u64"
+          },
+          {
+            "name": "membershipFee",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Admin",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "dao",
+            "type": "publicKey"
+          },
+          {
+            "name": "admin",
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Membership",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "dao",
+            "type": "publicKey"
+          },
+          {
+            "name": "user",
+            "type": "publicKey"
+          },
+          {
+            "name": "joinedDate",
+            "type": "i64"
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Proposal",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "creator",
+            "type": "publicKey"
+          },
+          {
+            "name": "beneficiary",
+            "type": "publicKey"
+          },
+          {
+            "name": "dao",
+            "type": "publicKey"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "yesVotes",
+            "type": "u64"
+          },
+          {
+            "name": "noVotes",
+            "type": "u64"
+          },
+          {
+            "name": "tokenAmount",
+            "type": "u64"
+          },
+          {
+            "name": "status",
+            "type": "u8"
+          },
+          {
+            "name": "action",
+            "type": "u8"
+          },
+          {
+            "name": "endDate",
+            "type": "i64"
+          },
+          {
+            "name": "executed",
+            "type": "bool"
+          },
+          {
+            "name": "burnOnVote",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserProposalVotes",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "IsInitialized",
+      "msg": "Already initialized."
+    },
+    {
+      "code": 6001,
+      "name": "IsStaked",
+      "msg": "Tokens are already staked."
+    },
+    {
+      "code": 6002,
+      "name": "NotStaked",
+      "msg": "Tokens are not staked."
+    },
+    {
+      "code": 6003,
+      "name": "NoTokens",
+      "msg": "No tokens to stake."
+    },
+    {
+      "code": 6004,
+      "name": "InvalidTokenAmount",
+      "msg": "Invalid amount."
+    },
+    {
+      "code": 6005,
+      "name": "InsufficientFunds",
+      "msg": "Insufficient funds."
+    },
+    {
+      "code": 6006,
+      "name": "InvalidDestination",
+      "msg": "Invalid destination address."
+    },
+    {
+      "code": 6007,
+      "name": "InsufficientTreasuryBalance",
+      "msg": "Insufficient treasury balance."
+    },
+    {
+      "code": 6008,
+      "name": "InsufficientCollateral",
+      "msg": "Insufficient collateral balance."
+    },
+    {
+      "code": 6009,
+      "name": "InvalidInitialDeposit",
+      "msg": "Invalid deposit."
+    },
+    {
+      "code": 6010,
+      "name": "InvalidLockUp",
+      "msg": "Invalid minimum lock up period."
+    },
+    {
+      "code": 6011,
+      "name": "InvalidEndingSlot",
+      "msg": "Invalid ending slot."
+    },
+    {
+      "code": 6012,
+      "name": "InvalidVoteLimit",
+      "msg": "Invalid vote limit."
+    },
+    {
+      "code": 6013,
+      "name": "InvalidBeneficiary",
+      "msg": "Invalid beneficiary."
+    },
+    {
+      "code": 6014,
+      "name": "LockupPeriodNotEnded",
+      "msg": "Lockup period has not ended."
+    },
+    {
+      "code": 6015,
+      "name": "InvalidFee",
+      "msg": "Invalid fee."
+    },
+    {
+      "code": 6016,
+      "name": "NotAuthorized",
+      "msg": "Unauthorized user."
+    },
+    {
+      "code": 6017,
+      "name": "ProposalAlreadyPassed",
+      "msg": "Proposal has already passed."
+    },
+    {
+      "code": 6018,
+      "name": "ProposalEnded",
+      "msg": "The voting period has ended."
+    },
+    {
+      "code": 6019,
+      "name": "ProposalActive",
+      "msg": "The voting period has not ended."
+    },
+    {
+      "code": 6020,
+      "name": "ProposalAlreadyExecuted",
+      "msg": "Proposal already executed"
+    },
+    {
+      "code": 6021,
+      "name": "InvalidProposalAction",
+      "msg": "Invalid proposal action."
+    },
+    {
+      "code": 6022,
+      "name": "InvalidProposalCreator",
+      "msg": "Invalid proposal creator."
+    },
+    {
+      "code": 6023,
+      "name": "InvalidAdmins",
+      "msg": "Admin length must be between 1 and 5."
+    },
+    {
+      "code": 6024,
+      "name": "InvalidProposal",
+      "msg": "DAO and Proposal mismatch."
+    },
+    {
+      "code": 6025,
+      "name": "NameTooLong",
+      "msg": "Name is too long."
+    },
+    {
+      "code": 6026,
+      "name": "NameTooShort",
+      "msg": "Name is too short."
+    },
+    {
+      "code": 6027,
+      "name": "BioTooLong",
+      "msg": "Bio is too long."
+    },
+    {
+      "code": 6028,
+      "name": "ImageTooLong",
+      "msg": "Image is too long."
+    },
+    {
+      "code": 6029,
+      "name": "DescriptionTooLong",
+      "msg": "Description is too long."
+    },
+    {
+      "code": 6030,
+      "name": "InvalidTokenMint",
+      "msg": "Invalid token mint"
+    },
+    {
+      "code": 6031,
+      "name": "InvalidFeeAddress",
+      "msg": "Invalid fee address"
+    },
+    {
+      "code": 6032,
+      "name": "AlreadyMember",
+      "msg": "Invalid token account"
+    }
+  ],
+  "metadata": {
+    "address": "25Kw1yUstwo9dBugYc3GNY1cniMMwZjatXQWuBfLV2Da"
+  }
+}
